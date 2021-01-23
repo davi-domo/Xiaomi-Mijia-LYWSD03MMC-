@@ -51,7 +51,7 @@ add_read()
         humidity=${hnd38:42:2}
         humidity=$((16#$humidity))
 
-        #lecture et extraction de la valeur de d'humidité
+        #lecture et extraction du pourcentage de la batterie
         hnd1b=$(gatttool --device=$MACadd --char-read -a 0x1b)
         # Characteristic value/descriptor: 63
         battery=${hnd1b:33:2}
