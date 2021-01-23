@@ -1,10 +1,13 @@
 #!/bin/bash
 
-# on crée un fichier pour les log
+#extraction du chemin
 dir=$(dirname $(readlink -f $0))
+
+# on crée un fichier pour les log
 exec &>> $dir/log/mijia_com.log
 # chemin de la base de donnée
 sqlite_bd="$dir/bd/MIJIA.db"
+
 # on vérifie que l'on est en Root
 if [[ $EUID -ne 0 ]];
 then
